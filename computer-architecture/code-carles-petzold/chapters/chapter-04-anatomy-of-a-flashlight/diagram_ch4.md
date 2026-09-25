@@ -1,113 +1,117 @@
-# অধ্যায় ৪: ফ্ল্যাশলাইটের ব্যবচ্ছেদ (Anatomy of a Flashlight) — ডায়াগ্রাম ও চিত্রাবলী
+# অধ্যায় ৪: Anatomy of a Flashlight — ছবি দেখে বোঝো
 
-এই ডকুমেন্টে ৪র্থ অধ্যায়ের ইলেকট্রিক্যাল সার্কিট, আণবিক গঠন, ব্যাটারির অরিয়েন্টেশন এবং ওহমের সূত্রের ডায়াগ্রামগুলো ভিজ্যুয়ালি উপস্থাপন করা হয়েছে।
+**Battery শক্তি দেয়, switch পথ জোড়া লাগায়, আর bulb-এর filament গরম হয়ে আলো দেয়। কাজ করতে হলে সম্পূর্ণ circuit লাগবে।**
 
----
+ছবিগুলো **Markdown Preview**-তে দেখো অথবা `diagrams/`-এর SVG সরাসরি খোলো। Mermaid প্রয়োজন নেই।
 
-## ডায়াগ্রাম ১: সরল ফ্ল্যাশলাইট সার্কিট (Simple Electrical Circuit)
-একটি ব্যাটারি, সুইচ এবং লাইটবাল্ব যুক্ত নিরবচ্ছিন্ন বৃত্তাকার সার্কিট:
+**চিহ্ন চিনে নাও:** `+` ও `−` = battery terminal; দুই বিন্দুর ফাঁক = open switch; বিন্দু জোড়া = closed switch; ক্রসসহ বৃত্ত = bulb। হলুদ bulb জ্বলছে, ধূসর bulb নিভে আছে।
 
-```
-          +--------------------[ লাইটবাল্ব ]--------------------+
-          |                     (Filament)                   |
-          |                                                  |
-          |                                                [সুইচ]
-          |                                              (Switch)
-          |                                            /  (Open: 0)
-          |                                           o   (Closed: 1)
-  (+) [ ব্যাটারি ১ ] (1.5V)                                    |
-  (-) [ ব্যাটারি ২ ] (1.5V)                                    |
-          |                                                  |
-          +--------------------------------------------------+
-```
+## ডায়াগ্রাম ১: সরল flashlight circuit
 
----
+![সম্পূর্ণ ও বিচ্ছিন্ন flashlight circuit পাশাপাশি](diagrams/01-flashlight.svg)
 
-## ডায়াগ্রাম ২: পরমাণুর গঠন ও ইলেকট্রন প্রবাহ (Atomic Structure & Electron Flow)
+**বাম ছবি:** Battery (+) → switch → bulb → ফেরার তার → Battery (−)। Switch বন্ধ মানে contact জোড়া; তাই current চলার পথ সম্পূর্ণ।
 
-### ক) লিথিয়াম পরমাণুর মডেল (3 Protons, 3 Electrons):
-```
-              ( Electron - )
-                 o
-                / \
-               /   \
-    ( Protons + / Neutrons )  <=== কেন্দ্রের নিউক্লিয়াস
-               \   /
-                \ /
-                 o
-              ( Electron - )
-```
+**ডান ছবি:** Switch খোলা, মাঝে ফাঁক। Battery থাকলেও সম্পূর্ণ পথ নেই, তাই steady current চলে না ও bulb নিভে থাকে।
 
-### খ) পরিবাহী তারের ভেতরে ইলেকট্রন লাফানোর চিত্র (Electron Jumping):
-```
-  [পরমাণু ১] ---e----> [পরমাণু ২] ---e----> [পরমাণু ৩] ---e----> [পরমাণু ৪]
-  (ইলেকট্রন ঋণাত্মক (-) অ্যানোড থেকে ধনাত্মক (+) ক্যাথোডের দিকে প্রবাহিত হয়)
-```
+- Battery-র chemical energy বৈদ্যুতিক শক্তি জোগায়।
+- Filament হলো bulb-এর ভেতরের পাতলা তার; গরম হলে আলো দেয়। ছবির ক্রস সেটির সহজ symbol।
+- Bulb শক্তি নেয়; charge সেখানে খরচ হয়ে শেষ হয় না।
 
----
+**মনে রাখো: একটি wire দিয়ে bulb-এ পৌঁছানোই যথেষ্ট নয়; battery-তে ফেরার পথও চাই।**
 
-## ডায়াগ্রাম ৩: ব্যাটারির সিরিজ ও প্যারালাল সংযোগ (Battery Configurations)
+## ডায়াগ্রাম ২: পরমাণু ও electron flow
 
-### ক) সিরিজ সংযোগ (Series Connection) — ভোল্টেজ বৃদ্ধি পায়:
-```
-  (-) [ -  ব্যাটারি ১  + ]===>[ -  ব্যাটারি ২  + ] (+)
-  
-  ভোল্টেজ: 1.5V + 1.5V = 3.0 Volts (উচ্চ উজ্জ্বলতা)
-```
+### ক. Lithium atom-এর সহজ model
 
-### খ) প্যারালাল সংযোগ (Parallel Connection) — দীর্ঘস্থায়িত্ব বৃদ্ধি পায়:
-```
-        (+) -----------------+----------------- (+)
-                             |
-                     [ -  ব্যাটারি ১  + ]
-                             |
-                     [ -  ব্যাটারি ২  + ]
-                             |
-        (-) -----------------+----------------- (-)
+![Lithium-7-এর তিনটি electron, তিনটি proton ও চারটি neutron](diagrams/02a-atom.svg)
 
-  ভোল্টেজ: 1.5 Volts (একই ভোল্টেজ, কিন্তু দ্বিগুণ সময় চলবে)
-```
+মাঝের nucleus-এ **৩টি proton ও ৪টি neutron**; বাইরে **৩টি electron**। এটি বইয়ের lithium-7 উদাহরণ। Neutral atom-এ ৩টি positive ও ৩টি negative charge পরস্পর সাম্য রাখে।
 
----
+দুটি electron ভেতরের shell-এ, একটি বাইরের shell-এ দেখানো হয়েছে। বৃত্তগুলো বোঝানোর model; electron বাস্তবে গ্রহের মতো এই আঁকা পথে ঘোরে না। Lithium-এর এই ছবি আর নিচের copper/metal wire-এর ছবি আলাদা উদাহরণ।
 
-## ডায়াগ্রাম ৪: পানি ও পাইপের উপমা (Water Analogy Diagram)
+### খ. Electron flow আর current-এর arrow উল্টো কেন?
 
-```
-  +-----------------------------------------------------------------------+
-  |  বিদ্যুৎ ব্যবস্থা               পানি প্রবাহ ব্যবস্থা                     |
-  +-----------------------------------------------------------------------+
-  |  ভোল্টেজ (Voltage, E)   ===>  পানির চাপ (Water Pressure)              |
-  |  কারেন্ট (Current, I)   ===>  প্রবাহিত পানির পরিমাণ (Water Flow Rate)   |
-  |  রেজিস্ট্যান্স (Resist., R)===>  পাইপের সরুত্ব বা বাধা (Pipe Narrowness)  |
-  +-----------------------------------------------------------------------+
-```
+![ধাতব তারে electron drift ও conventional current-এর বিপরীত দিক](diagrams/02b-electron-flow.svg)
 
----
+| কী দেখছি? | Battery-র বাইরের metal circuit-এ দিক |
+| --- | --- |
+| Electron-এর net drift | Negative (−) → Positive (+) |
+| Conventional current | Positive (+) → Negative (−) |
 
-## ডায়াগ্রাম ৫: ওহমের সূত্রের ত্রিভুজ (Ohm's Law Triangle)
+**এগুলো একই ঘটনার দুটি direction convention।** এই নোটের circuit diagram-এ conventional current দেখানো হয়েছে; বইয়ের electron arrow দেখলে উল্টো দিক পাবে।
 
-```
-             /\
-            /  \
-           / E  \         E = ভোল্টেজ (Volts)
-          /------\        I = কারেন্ট (Amperes)
-         / I  | R \       R = রেজিস্ট্যান্স (Ohms)
-        /________\
+ধাতুর positive ion-গুলো তাদের গড় অবস্থানে থাকে; mobile electron-গুলোর net drift হয়। ছবিটি বোঝানোর জন্য সরল করা—electron এক সারিতে নিয়ম মেনে দৌড়াচ্ছে বা প্রত্যেকটি electron দ্রুত পুরো circuit ঘুরছে, এমন নয়।
 
-   সূত্রসমূহ:
-   1)  I = E / R   (কারেন্ট নির্ণয়)
-   2)  E = I * R   (ভোল্টেজ নির্ণয়)
-   3)  R = E / I   (রেজিস্ট্যান্স নির্ণয়)
-```
+## ডায়াগ্রাম ৩: Battery series ও parallel
 
----
+![সঠিক series ও parallel battery connection](diagrams/03-batteries.svg)
 
-## ডায়াগ্রাম ৬: সুইচের অন/অফ এবং বাইনারি লজিক স্টেট (Binary Switch State)
+### Series: একটির plus-এর সঙ্গে অন্যটির minus
 
-```
-   [সুইচ খোলা / Open Switch]     ===>  কারেন্ট নেই (OFF)  ===>  বাইনারি মান: 0
-   [সুইচ বন্ধ / Closed Switch]   ===>  কারেন্ট চালু (ON)   ===>  বাইনারি মান: 1
+ওপরের ছবিতে মাঝের wire একটি cell-এর `+`-কে অন্যটির `−`-এর সঙ্গে যুক্ত করেছে। বাইরের দুই terminal-এ মোট voltage: **1.5 + 1.5 = 3 V**।
 
-      o--- \ ---o  (Circuit Broken / Open)   ===> OFF (0)
-      o---------o  (Circuit Complete / Closed) ===> ON  (1)
-```
+### Parallel: plus-এর সঙ্গে plus, minus-এর সঙ্গে minus
+
+নিচের ছবিতে দুটি cell **আলাদা branch-এ**। বাঁয়ের সবুজ bus দুই negative terminal-কে এবং ডানের bus দুই positive terminal-কে যুক্ত করেছে। Output voltage থাকে **1.5 V**।
+
+| বৈশিষ্ট্য | Series: দুটি সমান cell | Parallel: দুটি সমান cell |
+| --- | --- | --- |
+| Output voltage | 3 V | 1.5 V |
+| আদর্শ charge capacity (Ah) | একটি cell-এর সমান | দুটি cell-এর capacity যোগ হয় |
+| মূল ফল | Voltage বাড়ে | একই voltage-এ বেশি charge সরবরাহ করা যায় |
+
+ছবির বাইরের `−` ও `+` terminal-এর মাঝে load বসালে কাজের circuit সম্পূর্ণ হবে। এগুলো সরাসরি তার দিয়ে জোড়া দেওয়ার নির্দেশ নয়।
+
+একই উপযুক্ত load-এ আদর্শ matched parallel cell একটি cell-এর তুলনায় প্রায় দ্বিগুণ সময় চলতে পারে; বাস্তবে runtime load ও cell-এর অবস্থার ওপর নির্ভর করে। Series-এ voltage বাড়লেই যেকোনো bulb নিরাপদে উজ্জ্বল হবে, এমন নয়—bulb-এর rating মিলতে হবে।
+
+## ডায়াগ্রাম ৪: পানি ও pipe-এর উপমা
+
+![Voltage, current ও resistance-এর সঙ্গে পানির ব্যবস্থার তুলনা](diagrams/04-water-analogy.svg)
+
+- **Voltage:** দুই জায়গার pressure difference-এর মতো—প্রবাহ চালানোর সম্ভাবনা। Circuit খোলা থাকলেও battery-র voltage থাকতে পারে।
+- **Current:** প্রতি সেকেন্ডে কতটা পানি যাচ্ছে তার মতো; মোট জমা পানির পরিমাণ নয়। বিদ্যুতে এটি প্রতি সেকেন্ডে charge প্রবাহের হার।
+- **Resistance:** সরু বা বাধাযুক্ত pipe-এর মতো; একই pressure difference-এ flow কমায়।
+
+উপমাটি intuition তৈরির জন্য। বিদ্যুৎ আক্ষরিক অর্থে পানি নয়; সব বৈদ্যুতিক ঘটনা এই উপমায় ব্যাখ্যা করা যায় না।
+
+## ডায়াগ্রাম ৫: Ohm’s law ও flashlight-এর হিসাব
+
+![Ohm’s law triangle, তিনটি formula এবং flashlight-এর উদাহরণ](diagrams/05-ohms-law.svg)
+
+বইয়ে voltage-এর জন্য **E**, এখানে **V** লেখা হয়েছে—এই সূত্রে একই পরিমাণ বোঝাচ্ছে।
+
+| যা জানতে চাই | সূত্র | একক |
+| --- | --- | --- |
+| Voltage | V = I × R | volt (V) |
+| Current | I = V / R | ampere (A) |
+| Resistance | R = V / I | ohm (Ω) |
+
+Triangle-এ যে রাশি বের করবে তা ঢেকে দাও: নিচে পাশাপাশি থাকলে গুণ; ওপর-নিচে থাকলে ভাগ। এটি সূত্র মনে রাখার কৌশল।
+
+**বইয়ের উদাহরণ:** Series-এ দুটি 1.5 V cell → 3 V। Bulb-এর operating resistance প্রায় 4 Ω ধরলে current **3 ÷ 4 = 0.75 A = 750 mA**। Power **P = V × I = 2.25 W**।
+
+Filament ঠান্ডা থাকলে resistance কম, গরম হলে বাড়ে। তাই 4 Ω-কে সব তাপমাত্রায় স্থির মান ধরে নিও না। Wire ও battery-র internal resistance এই সহজ হিসাবটিতে উপেক্ষা করা হয়েছে।
+
+**Open circuit:** পথ ভাঙা বলে current প্রায় শূন্য। **Short circuit:** খুব কম resistance-এর পথে current অনেক বেড়ে যেতে পারে; বাস্তবে battery ও wire তা সীমিত করে এবং গরম হতে পারে।
+
+## ডায়াগ্রাম ৬: Switch থেকে binary state
+
+![Open এবং closed switch-এর সঙ্গে zero ও one mapping](diagrams/06-switch-states.svg)
+
+| Switch | বিদ্যুতের পথ | Bulb | এখানে ব্যবহৃত bit |
+| --- | --- | --- | --- |
+| Open / খোলা | বিচ্ছিন্ন | OFF | 0 |
+| Closed / বন্ধ | সম্পূর্ণ | ON | 1 |
+
+এখানে battery, bulb ও অন্য wire ঠিক আছে ধরে নেওয়া হয়েছে। **দরজা বন্ধ করলে পথ আটকে যায়; switch বন্ধ করলে contact জোড়া লাগে এবং পথ চালু হয়।**
+
+`OFF = 0`, `ON = 1` হলো আমাদের বেছে নেওয়া encoding। এভাবে একটি physical অবস্থার সঙ্গে binary symbol-এর সম্পর্ক তৈরি করা যায়।
+
+## নিজের বোঝা যাচাই করো
+
+1. Battery থাকলেই bulb জ্বলে? — **না, সম্পূর্ণ circuit দরকার।**
+2. Electron flow ও conventional current-এর দিক একই? — **না, metal wire-এ বিপরীত।**
+3. দুটি 1.5 V cell parallel করলে 3 V হয়? — **না, 1.5 V থাকে।**
+4. Bulb-এর filament কী করে? — **বৈদ্যুতিক শক্তি নিয়ে গরম হয় ও আলো দেয়।**
+5. Closed switch মানে OFF? — **না, এই circuit-এ ON।**
